@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'stick-no-bills': ['"Stick No Bills"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
