@@ -4,7 +4,7 @@ export default function Skills(){
             <h1 className="font-stick-no-bills font-semibold text-2xl">Skills:</h1>
             <br></br>
             <div className="skills grid grid-cols-1 md:grid-cols-12 gap-4 text-xl">
-                <div className="languages col-span-1 md:col-span-6 md:border-r-2 border-black justify-items-center">
+                <div className="languages col-span-1 justify-items-center md:col-span-6 md:border-r-2 border-black">
                     <h4 className="mb-4 font-bold">Languages n' Such</h4>
                     <ul className="list-disc">
                         <li>JavaScript</li>
@@ -15,7 +15,7 @@ export default function Skills(){
                         <li>SQL</li>
                     </ul>
                 </div>
-                <div className="libraries col-span-1 md:col-span-6 justify-items-center">
+                <div className="libraries col-span-1 justify-items-center md:col-span-6">
                     <h4 className="mb-4 font-bold">Libraries n' Stuff</h4>
                     <ul className="list-disc">
                         <li>React</li>
@@ -31,13 +31,13 @@ export default function Skills(){
             <img
                 src="images/saturn.png"
                 alt="Decorative"
-                className="absolute top-0 right-0 w-32 h-32 transform translate-x-8 -translate-y-2"
+                className="absolute top-0 right-0 w-32 h-32 transform translate-x-8"
             />
             {/* Bottom-left image */}
             <img
                 src="images/neon-light.png"
                 alt="Decorative"
-                className="absolute bottom-0 left-0 w-32 h-32 transform -translate-x-4 translate-y-6 rotate-12"
+                className="absolute bottom-0 left-0 w-32 h-32 z-50 transform -translate-x-14 translate-y-20 md:translate-y-12 md:translate-x-1 rotate-12"
             />
         </div>
     )
