@@ -1,45 +1,29 @@
-export default function Skills(){
-    return(
-        <div className="relative bg-white/60 m-10 p-10 rounded-md">
-            <h1 className="font-stick-no-bills font-semibold text-2xl">Skills:</h1>
-            <br></br>
-            <div className="skills grid grid-cols-1 md:grid-cols-12 gap-4 text-xl">
-                <div className="languages col-span-1 justify-items-center md:col-span-6 md:border-r-2 border-black">
-                    <h4 className="mb-4 font-bold">Languages n' Such</h4>
-                    <ul className="list-disc">
-                        <li>JavaScript</li>
-                        <li>Java</li>
-                        <li>HTML/CSS</li>
-                        <li>PHP</li>
-                        <li>MongoDB</li>
-                        <li>SQL</li>
-                    </ul>
-                </div>
-                <div className="libraries col-span-1 justify-items-center md:col-span-6">
-                    <h4 className="mb-4 font-bold">Libraries n' Stuff</h4>
-                    <ul className="list-disc">
-                        <li>React</li>
-                        <li>Laravel</li>
-                        <li>Wordpress</li>
-                        <li>Git</li>
-                        <li>Tailwind</li>
-                        <li>Bootstrap</li>
-                    </ul>
-                </div>
-            </div>
-            {/* Top-right image */}
-            <img
-                src="images/saturn.png"
-                alt="Decorative"
-                className="absolute top-0 right-0 w-32 h-32 transform translate-x-8"
-            />
-            {/* Bottom-left image */}
-            <img
-                src="images/neon-light.png"
-                alt="Decorative"
-                className="absolute bottom-0 left-0 w-32 h-32 z-50 transform -translate-x-14 translate-y-20 md:translate-y-12 md:translate-x-1 rotate-12"
-            />
-        </div>
-    )
+import Skill from "./Skill";
 
+export default function Skills() {
+    const skills = [
+        { name: "JavaScript", color: "#FFEE93" }, // pastel yellow
+        { name: "Java", color: "#FFADAD" },       // pastel red
+        { name: "HTML/CSS", color: "#B9FBC0" },  // pastel green
+        { name: "PHP", color: "#A0C4FF" },       // pastel blue
+        { name: "MongoDB", color: "#FFCFD2" },   // pastel pink
+        { name: "SQL", color: "#C4B7E7" },       // pastel purple
+        { name: "React", color: "#FFD6A5" },     // pastel peach
+        { name: "Laravel", color: "#D0F4DE" },   // pastel mint
+        { name: "Wordpress", color: "#FDE2E4" }, // pastel rose
+        { name: "Git", color: "#F1C0E8" },       // pastel lavender
+        { name: "Tailwind", color: "#FAE3D9" },  // pastel cream
+        { name: "Bootstrap", color: "#BDE0FE" }, // pastel sky
+    ];
+
+    return (
+        <div className="relative bg-white/60 m-10 p-10 rounded-md">
+            <h1 className="font-stick-no-bills font-semibold text-2xl mb-6">Skills:</h1>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                {skills.map((skill) => (
+                    <Skill key={skill.name} name={skill.name} color={skill.color} />
+                ))}
+            </div>
+        </div>
+    );
 }
