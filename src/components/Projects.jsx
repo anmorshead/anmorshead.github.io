@@ -49,6 +49,27 @@ export default function Projects() {
                     description="Using a Figma wireframe I worked to redesign the NSCC website to improve the overall flow of the site and give it a more modern look." 
                     github="https://github.com/anmorshead/NSCC-Redesign"
                 />
+                <ProjectCard 
+                    image="images/Chirper-gif.gif" 
+                    name="Chirper" 
+                    stack="Laravel, Tailwind CSS" 
+                    description="Using the laravel Chirper project walk through I added additional functionality including liking posts, bookmarks, and media uploads" 
+                    github="https://github.com/anmorshead/Chirper"
+                />
+                <ProjectCard 
+                    image="images/favCars-gif.gif" 
+                    name="Favourite Cars App" 
+                    stack="MongoDB, Express.js, React, Node.js" 
+                    description="Users can create account and add/edit/delete cars from my list of favourite cars" 
+                    github="https://github.com/anmorshead/FavouriteCarsReactApp"
+                />
+                <ProjectCard 
+                    image="images/citiesDB-gif.gif" 
+                    name="Cities Database" 
+                    stack="PHP, MySQL" 
+                    description="I created a web site in basic PHP that allows for the viewing, searching, inserting, updating, and deleting of city records from the MySQL world sample database. Forms to allow for insertion and update have client-side validation of valid input. Only authenticated users will be able to access the system." 
+                    github="https://github.com/anmorshead/CitiesDatabase"
+                />
             </div>
             <Footer />
         </div>

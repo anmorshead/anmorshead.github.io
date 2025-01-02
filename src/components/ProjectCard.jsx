@@ -11,7 +11,7 @@ export default function ProjectCard(props){
                         rel="noopener noreferrer"
                         className="text-blue-600 underline hover:text-blue-800"
                     >
-                        GitHub Link
+                        GitHub Repo
                     </a></strong></h4>
         </div>
     )
