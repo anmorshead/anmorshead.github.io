@@ -14,6 +14,9 @@ export default function Skills() {
         { name: "Git", color: "#F1C0E8" },        
         { name: "Tailwind", color: "#D9FFF8" },   
         { name: "Bootstrap", color: "#51E5FF" },  
+        { name: "Next.js", color: "#52B2CF" }, 
+        { name: "Node.js", color: "#F08700" }, 
+        { name: "Express.js", color: "#CA61C3" }, 
     ];
 
     return (
