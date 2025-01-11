@@ -14,7 +14,7 @@ export default function NavBar() {
     };
 
     return (
-        <nav className="px-6 bg-black/75 text-white">
+        <nav className="sticky top-0 px-6 bg-black/75 text-white z-10">
             {/* Navbar container */}
             <div className="flex justify-between items-center">
                 {/* Welcome image */}

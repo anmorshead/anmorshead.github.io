@@ -1,19 +1,45 @@
-export default function ProjectCard(props){
-    return(
-        <div className="bg-white/70 p-4 rounded-md m-10 md:max-w-xl">
-            <img src={props.image}/>
-            <h4><strong>Project Name: </strong>{props.name}</h4>
-            <h4><strong>Stack: </strong>{props.stack}</h4>
-            <h4><strong>Description: </strong>{props.description}</h4>
-            <h4><strong><a
-                        href={props.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 underline hover:text-blue-800"
-                    >
-                        GitHub Repo
-                    </a></strong></h4>
-        </div>
-    )
+import { useState } from 'react';
+import { Card, CardMedia, Typography, Chip } from '@mui/material';
 
+export default function ProjectCard({ title, description, image, gif, id, chipNames, link }) {
+    const [hoveredCard, setHoveredCard] = useState(null);
+
+    return (
+        
+        <Card  
+            // variant="solid" 
+            sx={{ maxWidth: 650,
+                    boxShadow: 15
+             }} 
+            className=""
+            onMouseEnter={() => setHoveredCard(id)} 
+            onMouseLeave={() => setHoveredCard(null)}
+        >
+            <CardMedia
+                sx={{ height: 500 }}
+                image={hoveredCard === id ? gif : image}
+                title={title}
+            />
+            <Typography className="p-4" gutterBottom variant="h5" component="div">
+                {title}
+            </Typography>
+            <Typography className="px-4" variant="body2" sx={{ color: 'text.secondary' }}>
+                {description}
+                <br />
+                <a 
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline hover:text-blue-800"
+                >
+                    GitHub Repo
+                </a>
+            </Typography>
+            <div className="p-4 space-x-2">
+                {chipNames.map(chip => (
+                    <Chip key={chip} label={chip} variant="outlined" />
+                ))}
+            </div>
+        </Card>
+    );
 }
