@@ -7,7 +7,7 @@ import '../App.css'
 
 export default function Main(){
     return(
-        <div className="bg-main-bg bg-cover">
+        <div className="bg-main-bg bg-cover background">
             <NavBar />
             <Header/>
             <About/>
