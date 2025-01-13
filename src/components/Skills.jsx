@@ -2,21 +2,22 @@ import Skill from "./Skill";
 
 export default function Skills() {
     const skills = [
-        { name: "JavaScript", color: "#FFD700" }, 
-        { name: "Java", color: "#FF0598" },      
-        { name: "HTML/CSS", color: "#ACF39D" },   
-        { name: "PHP", color: "#A0C4FF" },       
-        { name: "MongoDB", color: "#FFCFD2" },    
-        { name: "SQL", color: "#EE70FF" },       
-        { name: "React", color: "#EE7B30" },     
-        { name: "Laravel", color: "#36C9C6" },    
-        { name: "Wordpress", color: "#EDFF86" },  
-        { name: "Git", color: "#F1C0E8" },        
-        { name: "Tailwind", color: "#D9FFF8" },   
-        { name: "Bootstrap", color: "#51E5FF" },  
-        { name: "Next.js", color: "#52B2CF" }, 
-        { name: "Node.js", color: "#F08700" }, 
-        { name: "Express.js", color: "#CA61C3" }, 
+        { name: "JavaScript", color: "#FF0598", icon: "images/js.png" }, 
+        { name: "Java", color: " #FFD700", icon: "images/java.png"},      
+        { name: "HTML", color: "#ACF39D", icon: "images/html.png" },  
+        { name: "CSS", color: "#CBF56D", icon: "images/css.png" },  
+        { name: "PHP", color: "#A0C4FF", icon: "images/php.png" },       
+        { name: "MongoDB", color: "#FFCFD2", icon: "images/MongoDB.png" },    
+        { name: "SQL", color: "#EE70FF", icon: "images/MySQL.png" },       
+        { name: "React", color: "#EE7B30", icon: "images/react.png" },     
+        { name: "Laravel", color: "#36C9C6", icon: "images/Laravel.png" },    
+        { name: "Wordpress", color: "#EDFF86", icon: "images/wordpress.png" },  
+        { name: "Git", color: "#F1C0E8", icon: "images/git.png" },        
+        { name: "Tailwind", color: "#D9FFF8", icon: "images/Tailwind.png" },   
+        { name: "Bootstrap", color: "#51E5FF", icon: "images/Bootstrap.png" },  
+        { name: "Next.js", color: "#F08700", icon: "images/Next.js.png" }, 
+        { name: "Node.js", color: "#52B2CF", icon: "images/Node.js.png" }, 
+        { name: "Express.js", color: "#CA61C3", icon: "images/Express.png" }, 
     ];
 
     return (
@@ -24,7 +25,7 @@ export default function Skills() {
             <h1 className="font-stick-no-bills font-semibold text-2xl mb-6">Skills:</h1>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                 {skills.map((skill) => (
-                    <Skill key={skill.name} name={skill.name} color={skill.color} />
+                    <Skill key={skill.name} name={skill.name} color={skill.color} icon={skill.icon}/>
                 ))}
             </div>
         </div>

@@ -16,7 +16,10 @@ export default function ProjectCard({ title, description, image, gif, id, chipNa
             onMouseLeave={() => setHoveredCard(null)}
         >
             <CardMedia
-                sx={{ height: 500 }}
+                sx={{ height: "auto", // Let the height adjust dynamically
+                    width: "100%", // Ensure the width scales with the card
+                    objectFit: "contain" }}
+                component="img"
                 image={hoveredCard === id ? gif : image}
                 title={title}
             />
@@ -25,7 +28,7 @@ export default function ProjectCard({ title, description, image, gif, id, chipNa
             </Typography>
             <Typography className="px-4" variant="body2" sx={{ color: 'text.secondary' }}>
                 {description}
-                <br />
+                <br/><br/>
                 <a 
                     href={link}
                     target="_blank"
@@ -35,7 +38,7 @@ export default function ProjectCard({ title, description, image, gif, id, chipNa
                     GitHub Repo
                 </a>
             </Typography>
-            <div className="p-4 space-x-2">
+            <div className="p-4 space-x-2 space-y-2">
                 {chipNames.map(chip => (
                     <Chip key={chip} label={chip} variant="outlined" />
                 ))}

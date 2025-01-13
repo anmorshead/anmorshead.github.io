@@ -3,6 +3,10 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import ProjectCard from "./ProjectCard";
 import { Fade } from "@mui/material";
+import Masonry from '@mui/lab/Masonry';
+
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../themes/cardTheme';
 
 export default function Projects() {
   // State to track which cards are visible
@@ -99,30 +103,35 @@ export default function Projects() {
       setVisibleCards((prev) =>
         prev.length < projectData.length ? [...prev, prev.length] : prev
       );
-    }, 200); // 200ms delay between cards
+    }, 200); 
 
-    return () => clearInterval(timer); // Cleanup the interval
+    return () => clearInterval(timer); // Clear the interval
   }, [projectData.length]);
 
   return (
-    <div className="bg-project-bg bg-fixed">
-      <NavBar />
-      <div className="flex justify-center items-center my-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-8">
-          {projectData.map((project, index) => (
-            <Fade
-              key={index}
-              in={visibleCards.includes(index)} // Trigger fade-in for visible cards
-              timeout={500} // Duration of the fade effect
-            >
-              <div>
-                <ProjectCard {...project} />
-              </div>
-            </Fade>
-          ))}
+    <ThemeProvider theme={theme}>
+        <div className="bg-project-bg bg-fixed">
+        <NavBar />
+        <div className="flex justify-center items-center my-10">
+        <Masonry
+            columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} // Adjust number of columns based on screen size
+            spacing={4} // Spacing between items
+          >
+            {projectData.map((project, index) => (
+                <Fade
+                key={index}
+                in={visibleCards.includes(index)} 
+                timeout={500} 
+                >
+                <div>
+                    <ProjectCard {...project} />
+                </div>
+                </Fade>
+            ))}
+            </Masonry>
         </div>
-      </div>
-      <Footer />
-    </div>
+        <Footer />
+        </div>
+    </ThemeProvider>
   );
 }
