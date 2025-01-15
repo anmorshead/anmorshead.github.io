@@ -1,16 +1,21 @@
+import { Chip, Avatar } from "@mui/material";
+
 export default function Skill({ name, color, icon }) {
     return (
-        <div
-            className={`p-4 rounded-md text-black text-center font-medium shadow-md transform transition-transform duration-300 hover:scale-105 flex items-center justify-center space-x-2`}
-            style={{ backgroundColor: color }}
-        >
-                <img
-                    src={icon}
-                    alt={`${name} icon`}
-                    className="w-6 h-6 z10" 
-                />
-            
-            {name}
-        </div>
+        <Chip
+            label={name}
+            avatar={<Avatar alt={`${name} icon`} src={icon} />}
+            sx={{
+                backgroundColor: color, // Use custom color for background
+                color: "black", // Ensure text is readable
+                fontWeight: "bold",
+                boxShadow: 3,
+                "&:hover": {
+                    transform: "scale(1.05)",
+                    transition: "transform 0.3s ease",
+                },
+            }}
+        />
     );
 }
+

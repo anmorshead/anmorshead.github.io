@@ -1,4 +1,5 @@
 import Skill from "./Skill";
+import { Paper } from '@mui/material';
 
 export default function Skills() {
     const skills = [
@@ -21,13 +22,36 @@ export default function Skills() {
     ];
 
     return (
-        <div className="relative bg-white/60 m-10 p-10 rounded-md">
-            <h1 className="font-stick-no-bills font-semibold text-2xl mb-6">Skills:</h1>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                {skills.map((skill) => (
-                    <Skill key={skill.name} name={skill.name} color={skill.color} icon={skill.icon}/>
-                ))}
+        <Paper
+            square
+            elevation={3} // Shadow depth
+            sx={{
+                backgroundColor: '#000000', // Custom background color
+                padding: 5, // Add padding inside the paper
+                marginBottom:20
+            }}
+        >
+            <img
+                src="images/skills.png" // Replace with your "About Me" image URL
+                alt="About Me"
+                style={{
+                    display: 'block', // Ensures it's treated as a block element
+                    width: '500px', // Adjust width to fit your design
+                }}
+            />
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-10">
+                 {skills.map((skill) => (
+                     <Skill key={skill.name} name={skill.name} color={skill.color} icon={skill.icon}/>
+                 ))}
             </div>
-        </div>
+        </Paper>
+        // <div className="relative bg-white/60 m-10 p-10 rounded-md">
+        //     <h1 className="font-stick-no-bills font-semibold text-2xl mb-6">Skills:</h1>
+        //     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        //         {skills.map((skill) => (
+        //             <Skill key={skill.name} name={skill.name} color={skill.color} icon={skill.icon}/>
+        //         ))}
+        //     </div>
+        // </div>
     );
 }

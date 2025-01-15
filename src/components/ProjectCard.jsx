@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, CardMedia, Typography, Chip } from '@mui/material';
+import { Card, CardMedia, Typography, Chip, Divider } from '@mui/material';
 
 export default function ProjectCard({ title, description, image, gif, id, chipNames, link }) {
     const [hoveredCard, setHoveredCard] = useState(null);
@@ -26,6 +26,7 @@ export default function ProjectCard({ title, description, image, gif, id, chipNa
             <Typography className="p-4" gutterBottom variant="h5" component="div">
                 {title}
             </Typography>
+
             <Typography className="px-4" variant="body2" sx={{ color: 'text.secondary' }}>
                 {description}
                 <br/><br/>
@@ -38,6 +39,7 @@ export default function ProjectCard({ title, description, image, gif, id, chipNa
                     GitHub Repo
                 </a>
             </Typography>
+            
             <div className="p-4 space-x-2 space-y-2">
                 {chipNames.map(chip => (
                     <Chip key={chip} label={chip} variant="outlined" />
