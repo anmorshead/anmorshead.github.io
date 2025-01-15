@@ -1,80 +1,170 @@
 import { useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
 
 export default function NavBar() {
-    const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
-    const location = useLocation();
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
-    // Conditionally set the class based on the path
-    const isHome = location.pathname === '/';
-    const isProjects = location.pathname === '/projects';
+  const pages = [
+    { name: 'Home', path: '/', color: '#fc0fc0' },
+    { name: 'Projects', path: '/projects', color: '#Fbd90b' },
+    { name: 'Resume', path: 'https://drive.google.com/file/d/1HMcLIYtjl62FH2bN0dosxCkRYMPO_62E/view?usp=sharing', color: '#8ff0fb' },
+  ];
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuVisible(!isMobileMenuVisible);
-    };
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
 
-    return (
-        <nav className="sticky top-0 px-6 bg-black/75 text-white z-10">
-            {/* Navbar container */}
-            <div className="flex justify-between items-center">
-                {/* Welcome image */}
-                <div className="flex items-center">
-                    <img src="images/neonwelcome.png" className="h-10 object-contain m-2" alt="Welcome" />
-                </div>
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
-                {/* Hamburger button */}
-                <button
-                    className="block md:hidden text-2xl text-[#FF6ED1]"
-                    onClick={toggleMobileMenu}
-                    aria-label="Toggle menu"
+  return (
+    <AppBar
+      position="fixed"
+      sx={{
+        backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black with 70% transparency
+      }}
+    >
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          {/* Logo for Desktop */}
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <Typography
+              sx={{
+                display: { xs: 'none', md: 'flex' }
+              }}
+            >
+              <img src="images/neonwelcome.png" className="h-10 object-contain m-2" alt="Logo" />
+            </Typography>
+          </Link>
+
+          {/* Responsive Menu Icon */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="open navigation menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+            <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                '& .MuiPaper-root': {
+                backgroundColor: 'black'},
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) =>
+                page.name === 'Resume' ? (
+                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    <Button
+                      href={page.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      sx={{
+                        color: page.color,
+                        textAlign: 'center',
+                      }}
+                    >
+                      {page.name}
+                    </Button>
+                  </MenuItem>
+                ) : (
+                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    <Button
+                      component={Link}
+                      to={page.path}
+                      sx={{
+                        color: page.color,
+                      }}
+                    >
+                      {page.name}
+                    </Button>
+                  </MenuItem>
+                )
+              )}
+            </Menu>
+          </Box>
+
+          {/* Logo for Mobile */}
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+            }}
+          >
+            <img src="images/neonwelcome.png" className="h-10 object-contain m-2" alt="Logo" />
+          </Typography>
+
+          {/* Desktop Links */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) =>
+              page.name === 'Resume' ? (
+                <Button
+                  key={page.name}
+                  href={page.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    my: 2,
+                    color: page.color,
+                    display: 'block',
+                    fontWeight: 'bold',
+                  }}
                 >
-                    &#9776;
-                </button>
-
-                {/* Desktop menu */}
-                <ul className="hidden md:flex space-x-12 text-xl items-center font-stick-no-bills">
-                    <li className={`text-[#FF6ED1] ${isHome ? 'underline' : ''}`}>
-                        <Link to="/" className="flex items-center space-x-2">
-                            <img src="images/neonhome.png" alt="Home Icon" className="h-5 w-5 mx-1 object-contain" />
-                            Home
-                        </Link>
-                    </li>
-                    <li className={`text-[#FFD041] ${isProjects ? 'underline' : ''}`}>
-                        <Link to="/projects" className="flex items-center space-x-2">
-                            <img
-                                src="images/neon-folder.png"
-                                alt="Folder Icon"
-                                className="h-5 w-5 mx-1 object-contain"
-                            />
-                            Projects
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-
-            {/* Mobile menu */}
-            {isMobileMenuVisible && (
-                <ul className="flex flex-col space-y-4 text-xl items-center font-stick-no-bills md:hidden">
-                    <li className={`text-[#FF6ED1] ${isHome ? 'underline' : ''}`}>
-                        <Link to="/" onClick={toggleMobileMenu} className="flex items-center space-x-2">
-                            <img src="images/neonhome.png" alt="Home Icon" className="h-5 w-5 mx-1 object-contain" />
-                            Home
-                        </Link>
-                    </li>
-                    <li className={`text-[#FFD041] ${isProjects ? 'underline' : ''}`}>
-                        <Link to="/projects" onClick={toggleMobileMenu} className="flex items-center space-x-2 mb-10">
-                            <img
-                                src="images/neon-folder.png"
-                                alt="Folder Icon"
-                                className="h-5 w-5 mx-1 object-contain"
-                            />
-                            Projects
-                        </Link>
-                    </li>
-                </ul>
+                  {page.name}
+                </Button>
+              ) : (
+                <Button
+                  key={page.name}
+                  component={Link}
+                  to={page.path}
+                  sx={{
+                    my: 2,
+                    color: page.color,
+                    display: 'block',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  {page.name}
+                </Button>
+              )
             )}
-        </nav>
-    );
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
 }
 
 

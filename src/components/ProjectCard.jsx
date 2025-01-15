@@ -1,23 +1,20 @@
 import { useState } from 'react';
-import { Card, CardMedia, Typography, Chip, Divider } from '@mui/material';
+import { Card, CardMedia, Typography, Chip } from '@mui/material';
 
 export default function ProjectCard({ title, description, image, gif, id, chipNames, link }) {
     const [hoveredCard, setHoveredCard] = useState(null);
 
     return (
-        
         <Card  
-            // variant="solid" 
             sx={{ maxWidth: 650,
-                    boxShadow: 15
+                  boxShadow: 15,
              }} 
-            className=""
             onMouseEnter={() => setHoveredCard(id)} 
             onMouseLeave={() => setHoveredCard(null)}
         >
             <CardMedia
-                sx={{ height: "auto", // Let the height adjust dynamically
-                    width: "100%", // Ensure the width scales with the card
+                sx={{ height: "auto", 
+                    width: "100%", 
                     objectFit: "contain" }}
                 component="img"
                 image={hoveredCard === id ? gif : image}

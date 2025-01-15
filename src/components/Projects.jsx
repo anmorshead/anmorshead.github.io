@@ -110,26 +110,27 @@ export default function Projects() {
 
   return (
     <ThemeProvider theme={theme}>
-        <div className="bg-project-bg bg-fixed">
         <NavBar />
-        <div className="flex justify-center items-center my-10">
-        <Masonry
-            columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} // Adjust number of columns based on screen size
-            spacing={4} // Spacing between items
-          >
-            {projectData.map((project, index) => (
-                <Fade
-                key={index}
-                in={visibleCards.includes(index)} 
-                timeout={500} 
-                >
-                <div>
-                    <ProjectCard {...project} />
-                </div>
-                </Fade>
-            ))}
-            </Masonry>
-        </div>
+        <div className="bg-project-bg bg-fixed">
+          <div className="flex justify-center items-center">
+          <Masonry className="mt-10"
+              sx={{ marginTop: '4.5rem' }}
+              columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} // Adjust number of columns based on screen size
+              spacing={4} // Spacing between items
+            >
+              {projectData.map((project, index) => (
+                  <Fade
+                  key={index}
+                  in={visibleCards.includes(index)} 
+                  timeout={500} 
+                  >
+                  <div>
+                      <ProjectCard {...project} />
+                  </div>
+                  </Fade>
+              ))}
+              </Masonry>
+          </div>
         <Footer />
         </div>
     </ThemeProvider>
