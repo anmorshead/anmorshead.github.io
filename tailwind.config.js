@@ -10,7 +10,7 @@ export default {
         'stick-no-bills': ['"Stick No Bills"', 'sans-serif'],
       },
       backgroundImage: {
-        'main-bg': "url('/images/brick-wall-texture.jpg')",
+        'main-bg': "url('/images/brick2.jpg')",
         'project-bg': "url('/images/arrows-background.jpg')"
       },
       borderWidth: {
