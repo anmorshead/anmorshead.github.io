@@ -26,7 +26,7 @@ export default function Skills() {
             square
             elevation={3} 
             sx={{
-                backgroundColor: '#000000', 
+                backgroundColor: '#000000',
                 padding: 5, 
                 marginBottom:20
             }}

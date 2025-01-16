@@ -7,8 +7,8 @@ export default function About() {
             square
             elevation={3} // Shadow depth
             sx={{
-                backgroundColor: '#fc0fc0', // Custom background color
-                padding: 5, // Add padding inside the paper
+                backgroundColor: '#fc0fc0', 
+                padding: 5, 
                 marginBottom: 20,
             }}
         >
@@ -48,7 +48,7 @@ export default function About() {
                         I'm an emerging Web Developer based in Halifax NS, with a background in the creative industries. 
                         In my previous career as a Pastry Chef, I wowed guests with intricate, delicious pastries. Now, I channel that same passion 
                         for detail and design into crafting websites that are as functional as they are eye-catching. I'm all about writing clean code, 
-                        solving problems, and finding the most efficient solutions to problems. Check out the{' '}
+                        solving problems, and finding the most efficient solutions. Check out the{' '}
                         <Link
                             to="/projects"
                             style={{ textDecoration: 'none', fontWeight: 'bold' }}

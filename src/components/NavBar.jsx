@@ -15,7 +15,7 @@ export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const pages = [
-    { name: 'Home', path: '/', color: '#fc0fc0' },
+    { name: 'Home', path: '/', color: '#ff63d8' },
     { name: 'Projects', path: '/projects', color: '#Fbd90b' },
     { name: 'Resume', path: 'https://drive.google.com/file/d/1HMcLIYtjl62FH2bN0dosxCkRYMPO_62E/view?usp=sharing', color: '#8ff0fb' },
   ];

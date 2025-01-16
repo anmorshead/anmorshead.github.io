@@ -65,7 +65,7 @@ export default function Projects() {
         "Using a Figma wireframe I worked to redesign the NSCC website to improve the overall flow of the site and give it a more modern look.",
       link: "https://github.com/anmorshead/NSCC-Redesign",
       image: "images/nscc-redesign.png",
-      gif: "images/nscc-redesign.png",
+      gif: "images/nscc-redesign.gif",
       chipNames: ["HTML", "Tailwind CSS"],
     },
     {
