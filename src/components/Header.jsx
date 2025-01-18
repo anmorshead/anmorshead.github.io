@@ -8,7 +8,7 @@ export default function Header() {
           <img
             className="block md:hidden rotate-180"
             src="images/flash.png"
-            alt="Flashing Star"
+            alt="Flashing neon"
           />
           <img
             className="hidden md:block rotate-180"

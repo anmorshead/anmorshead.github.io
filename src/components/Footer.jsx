@@ -10,19 +10,19 @@ export default function Footer() {
         sx={{
           backgroundColor: 'rgba(0, 0, 0, 0.7)',
           color: 'white',
-          py: 2, // Padding Y-axis
-          px: 3, // Padding X-axis
+          py: 2, 
+          px: 3, 
           textAlign: 'center',
         }}
       >
         <Typography variant="body1" gutterBottom>
-          Connect with me on the Web!
+          Connect with me online!
         </Typography>
         <Box
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            gap: 4, // Space between icons
+            gap: 4, 
           }}
         >
           {/* GitHub Link */}
@@ -45,7 +45,7 @@ export default function Footer() {
           </Link>
         </Box>
         <Typography variant="caption" display="block" sx={{ mt: 2 }}>
-          © {new Date().getFullYear()} Andrea Morshead
+          © {new Date().getFullYear()} | Andrea Morshead
         </Typography>
       </Box>
     );

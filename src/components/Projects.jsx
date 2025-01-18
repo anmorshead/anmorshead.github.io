@@ -95,6 +95,16 @@ export default function Projects() {
       gif: "images/citiesDB-gif.gif",
       chipNames: ["PHP", "JavaScript", "MySQL"],
     },
+    {
+      title: "Poker Hand Generator",
+      description:
+        "This Program will randomly generate 5 cards and tell you which hand you have in a Poker Game",
+      link: "https://github.com/anmorshead/Poker-Hand",
+      image: "images/poker-hand.png",
+      gif: "images/poker-hand.gif",
+      chipNames: ["JavaScript", "HTML", "CSS"],
+    },
+    
   ];
 
   // Add cards one by one with a delay

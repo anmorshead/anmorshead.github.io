@@ -17,7 +17,7 @@ export default function NavBar() {
   const pages = [
     { name: 'Home', path: '/', color: '#ff63d8' },
     { name: 'Projects', path: '/projects', color: '#Fbd90b' },
-    { name: 'Resume', path: 'https://drive.google.com/file/d/1HMcLIYtjl62FH2bN0dosxCkRYMPO_62E/view?usp=sharing', color: '#8ff0fb' },
+    { name: 'Resume', path: 'https://drive.google.com/file/d/1R9pLKnbX5ZA4br9PtCQ8U3O0c5END_qP/view?usp=sharing', color: '#8ff0fb' },
   ];
 
   const handleOpenNavMenu = (event) => {
@@ -32,7 +32,7 @@ export default function NavBar() {
     <AppBar
       position="fixed"
       sx={{
-        backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black with 70% transparency
+        backgroundColor: 'rgba(0, 0, 0, 0.7)', 
       }}
     >
       <Container maxWidth="xl">
@@ -127,7 +127,7 @@ export default function NavBar() {
           </Typography>
 
           {/* Desktop Links */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', gap:3 }}>
             {pages.map((page) =>
               page.name === 'Resume' ? (
                 <Button
