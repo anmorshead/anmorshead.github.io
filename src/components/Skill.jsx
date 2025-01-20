@@ -6,8 +6,8 @@ export default function Skill({ name, color, icon }) {
             label={name}
             avatar={<Avatar alt={`${name} icon`} src={icon} />}
             sx={{
-                backgroundColor: color, // Use custom color for background
-                color: "black", // Ensure text is readable
+                backgroundColor: color, 
+                color: "black", 
                 fontWeight: "bold",
                 boxShadow: 3,
                 "&:hover": {

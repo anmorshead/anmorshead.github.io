@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, Typography, Chip } from '@mui/material';
+import { Card, Typography, Chip, Avatar } from '@mui/material';
 
 export default function ProjectCard({ title, description, image, gif, id, chipNames, link }) {
     const [hoveredCard, setHoveredCard] = useState(null);
@@ -51,9 +51,21 @@ export default function ProjectCard({ title, description, image, gif, id, chipNa
 
             {/* Chips */}
             <div className="p-4 space-x-2 space-y-2">
-                {chipNames.map((chip) => (
-                    <Chip key={chip} label={chip} variant="outlined" />
-                ))}
+            {chipNames.map((chip) => (
+                <Chip 
+                    key={chip.name} 
+                    label={chip.name} 
+                    variant="outlined" 
+                    icon={
+                        <Avatar 
+                            src={chip.icon} 
+                            alt={`${chip.name} icon`} 
+                            style={{ width: 20, height: 20 }} 
+                        />
+                    } 
+                />
+            ))}
+
             </div>
         </Card>
     );

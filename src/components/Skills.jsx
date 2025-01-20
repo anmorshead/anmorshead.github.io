@@ -19,6 +19,7 @@ export default function Skills() {
         { name: "Next.js", color: "#F08700", icon: "images/Next.js.png" }, 
         { name: "Node.js", color: "#52B2CF", icon: "images/Node.js.png" }, 
         { name: "Express.js", color: "#e408fc", icon: "images/Express.png" }, 
+        { name: "Figma", color: "#ACF39D", icon: "images/figma.png" },
     ];
 
     return (

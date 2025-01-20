@@ -21,25 +21,31 @@ export default function Projects() {
       link: "https://github.com/anmorshead/DND-Style-Game",
       image: "images/shubie-park.png",
       gif: "images/shubie-park.gif",
-      chipNames: ["Java", "Java Swing"],
+      chipNames: [
+        { name: "Java", icon: "images/java.png" },
+      ],
     },
     {
       title: "Screensaver",
       description:
-        "An interactive screensaver shows shapes moving around a screen and colliding with other shapes and the edges of the screen, click to add an additional shape.",
+        "An interactive screensaver shows shapes moving around a screen, colliding with other shapes and the edges of the screen, click to add an additional shape.",
       link: "https://github.com/anmorshead/Screensaver",
       image: "images/screensaver.png",
       gif: "images/screensaver.gif",
-      chipNames: ["Java", "Java Swing"],
+      chipNames: [
+        { name: "Java", icon: "images/java.png" },
+      ],
     },
     {
       title: "Weather Week",
       description:
-        "A simple JavaScript web app that displays a graph of your chosen weather type for a selected city over the period of a week.",
+        "A simple JavaScript web app that displays a graph of your chosen weather type for a selected city over the period of a week. It uses data from the tomorrow.io API and Chart.js to display the data",
       link: "https://github.com/anmorshead/Weather-API-Website",
       image: "images/weather-week.png",
       gif: "images/weather-week.gif",
-      chipNames: ["JavaScript", "Chart.js", "Tomorrow.io API"],
+      chipNames: [
+        { name: "JavaScript", icon: "images/js.png" },
+      ],
     },
     {
       title: "Taskmaster Task Sorting App",
@@ -48,16 +54,23 @@ export default function Projects() {
       link: "https://github.com/anmorshead/DynamicTaskSortingProject",
       image: "images/taskmaster.png",
       gif: "images/taskmaster.gif",
-      chipNames: ["MongoDB", "Express.js", "React", "Node.js"],
+      chipNames: [
+        { name: "MongoDB", icon: "images/MongoDB.png" },
+        { name: "Express.js", icon: "images/Express.png" },
+        { name: "React", icon: "images/react.png" },
+        { name: "Node", icon: "images/Node.js.png" },
+      ],
     },
     {
       title: "Canadian Flight Tracker",
       description:
-        "I created a web app that allows users to see info about flights leaving from Canadian Airports using data gathered from the open sky API.",
+        "I created a web app that allows users to see info about flights leaving from Canadian Airports using data gathered from the open sky API, and mapped using Leaflet.js.",
       link: "https://github.com/anmorshead/Canadian-flight-Tracker-App",
       image: "images/flight-tracker.png",
       gif: "images/flight-tracker.gif",
-      chipNames: ["JavaScript", "Leaflet.js", "OpenSky API"],
+      chipNames: [
+        { name: "JavaScript", icon: "images/js.png" },
+      ],
     },
     {
       title: "NSCC site Redesign",
@@ -66,7 +79,11 @@ export default function Projects() {
       link: "https://github.com/anmorshead/NSCC-Redesign",
       image: "images/nscc-redesign.png",
       gif: "images/nscc-redesign.gif",
-      chipNames: ["HTML", "Tailwind CSS"],
+      chipNames: [
+        { name: "HTML", icon: "images/html.png" },
+        { name: "Tailwind", icon: "images/Tailwind.png" },
+        { name: "Figma", icon: "images/figma.png" },
+      ],
     },
     {
       title: "Chirper",
@@ -75,7 +92,12 @@ export default function Projects() {
       link: "https://github.com/anmorshead/Chirper",
       image: "images/Chirper-gif.png",
       gif: "images/Chirper-gif.gif",
-      chipNames: ["Laravel", "PHP", "JavaScript", "Tailwind CSS"],
+      chipNames: [
+        { name: "Laravel", icon: "images/Laravel.png" },
+        { name: "PHP", icon: "images/php.png" },
+        { name: "JavaScript", icon: "images/js.png" },
+        { name: "Tailwind", icon: "images/Tailwind.png" },
+      ],
     },
     {
       title: "Favourite Cars App",
@@ -84,7 +106,13 @@ export default function Projects() {
       link: "https://github.com/anmorshead/FavouriteCarsReactApp",
       image: "images/favCars-gif.png",
       gif: "images/favCars-gif.gif",
-      chipNames: ["MongoDB", "Express.js", "React", "Node.js", "Tailwind CSS"],
+      chipNames: [
+        { name: "MongoDB", icon: "images/MongoDB.png" },
+        { name: "Express.js", icon: "images/Express.png" },
+        { name: "React", icon: "images/react.png" },
+        { name: "Node", icon: "images/Node.js.png" },
+        { name: "Tailwind", icon: "images/Tailwind.png" },
+      ],
     },
     {
       title: "Cities Database",
@@ -93,7 +121,11 @@ export default function Projects() {
       link: "https://github.com/anmorshead/CitiesDatabase",
       image: "images/citiesDB-gif.png",
       gif: "images/citiesDB-gif.gif",
-      chipNames: ["PHP", "JavaScript", "MySQL"],
+      chipNames: [
+        { name: "PHP", icon: "images/php.png" },
+        { name: "JavaScript", icon: "images/js.png" },
+        { name: "MySQL", icon: "images/MySQL.png" },
+      ],
     },
     {
       title: "Poker Hand Generator",
@@ -102,7 +134,11 @@ export default function Projects() {
       link: "https://github.com/anmorshead/Poker-Hand",
       image: "images/poker-hand.png",
       gif: "images/poker-hand.gif",
-      chipNames: ["JavaScript", "HTML", "CSS"],
+      chipNames: [
+        { name: "HTML", icon: "images/html.png" },
+        { name: "CSS", icon: "images/css.png" },
+        { name: "JavaScript", icon: "images/js.png" },
+      ],
     },
     
   ];
