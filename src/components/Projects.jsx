@@ -26,6 +26,19 @@ export default function Projects() {
       ],
     },
     {
+      title: "Cat Forum",
+      description:
+        "I created a Discussion Forum for cat lovers using the Entity framework in ASP.NET with C#. This forum is styled using responsive Bootstrap",
+      link: "https://github.com/anmorshead/CatForum",
+      image: "images/catForum.png",
+      gif: "images/catForum.gif",
+      chipNames: [
+        { name: "C#", icon: "images/CSharp.png" },
+        { name: "ASP.NET", icon: "images/Net.png" },
+        { name: "Bootstrap", icon: "images/Bootstrap.png" },
+      ],
+    },
+    {
       title: "Screensaver",
       description:
         "An interactive screensaver shows shapes moving around a screen, colliding with other shapes and the edges of the screen, click to add an additional shape.",
@@ -45,6 +58,8 @@ export default function Projects() {
       gif: "images/weather-week.gif",
       chipNames: [
         { name: "JavaScript", icon: "images/js.png" },
+        { name: "HTML", icon: "images/html.png" },
+        { name: "CSS", icon: "images/css.png" },
       ],
     },
     {
@@ -138,6 +153,19 @@ export default function Projects() {
         { name: "HTML", icon: "images/html.png" },
         { name: "CSS", icon: "images/css.png" },
         { name: "JavaScript", icon: "images/js.png" },
+      ],
+    },
+    {
+      title: "Wordpress News Site Theme",
+      description:
+        "This theme can be added into your Wordpress site to display news articles organized by categories.",
+      link: "https://github.com/anmorshead/OnlineNewsTheme",
+      image: "images/newsSite.png",
+      gif: "images/newsSite.gif",
+      chipNames: [
+        { name: "Wordpress", icon: "images/wordpress.png" },
+        { name: "PHP", icon: "images/php.png" },
+        { name: "Bootstrap", icon: "images/Bootstrap.png" },
       ],
     },
     

@@ -16,10 +16,11 @@ export default function Skills() {
         { name: "Git", color: "#F1C0E8", icon: "images/git.png" },        
         { name: "Tailwind", color: "#D9FFF8", icon: "images/Tailwind.png" },   
         { name: "Bootstrap", color: "#8ff0fb", icon: "images/Bootstrap.png" },  
-        { name: "Next.js", color: "#F08700", icon: "images/Next.js.png" }, 
+        { name: ".NET", color: "#F08700", icon: "images/Net.png" }, 
         { name: "Node.js", color: "#52B2CF", icon: "images/Node.js.png" }, 
         { name: "Express.js", color: "#e408fc", icon: "images/Express.png" }, 
         { name: "Figma", color: "#ACF39D", icon: "images/figma.png" },
+        { name: "C#", color: "#D9FFF8", icon: "images/CSharp.png" },  
     ];
 
     return (
