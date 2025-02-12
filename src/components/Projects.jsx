@@ -74,6 +74,7 @@ export default function Projects() {
         { name: "Express.js", icon: "images/Express.png" },
         { name: "React", icon: "images/react.png" },
         { name: "Node", icon: "images/Node.js.png" },
+        { name: "Tailwind", icon: "images/Tailwind.png" },
       ],
     },
     {

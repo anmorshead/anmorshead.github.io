@@ -17,7 +17,7 @@ export default function NavBar() {
   const pages = [
     { name: 'Home', path: '/', color: '#ff63d8' },
     { name: 'Projects', path: '/projects', color: '#Fbd90b' },
-    { name: 'Resume', path: 'https://drive.google.com/file/d/1R9pLKnbX5ZA4br9PtCQ8U3O0c5END_qP/view?usp=sharing', color: '#8ff0fb' },
+    { name: 'Resume', path: 'https://drive.google.com/file/d/1Z_R_VHefdSqph0Wg_oO4dnhBCN9cKZZY/view?usp=sharing', color: '#8ff0fb' },
   ];
 
   const handleOpenNavMenu = (event) => {
