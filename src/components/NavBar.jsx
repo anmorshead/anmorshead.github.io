@@ -1,170 +1,160 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  Button,
+  MenuItem,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   const pages = [
-    { name: 'Home', path: '/', color: '#ff63d8' },
-    { name: 'Projects', path: '/projects', color: '#Fbd90b' },
-    { name: 'Resume', path: 'https://drive.google.com/file/d/1Z_R_VHefdSqph0Wg_oO4dnhBCN9cKZZY/view?usp=sharing', color: '#8ff0fb' },
+    { name: "Home", path: "/", color: "#ff63d8" },
+    { name: "Projects", path: "/projects", color: "#Fbd90b" },
+    {
+      name: "Resume",
+      path: "https://drive.google.com/file/d/1Z_R_VHefdSqph0Wg_oO4dnhBCN9cKZZY/view?usp=sharing",
+      color: "#8ff0fb",
+    },
   ];
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  const handleOpenNavMenu = (event) => setAnchorElNav(event.currentTarget);
+  const handleCloseNavMenu = () => setAnchorElNav(null);
 
   return (
-    <AppBar
-      position="fixed"
-      sx={{
-        backgroundColor: 'rgba(0, 0, 0, 0.7)', 
-      }}
-    >
+    <AppBar position="fixed" sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          {/* Logo for Desktop */}
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <Typography
-              sx={{
-                display: { xs: 'none', md: 'flex' }
-              }}
-            >
-              <img src="images/neonwelcome.png" className="h-10 object-contain m-2" alt="Logo" />
+        <Toolbar disableGutters sx={{ width: "100%", display: "flex", alignItems: "center" }}>
+          {/* Desktop Logo */}
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Typography sx={{ display: { xs: "none", md: "flex" } }}>
+              <img
+                src={isHovered ? "images/AM-home.png" : "images/AM.png"}
+                className="h-20 object-contain m-2"
+                alt="Logo"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              />
             </Typography>
           </Link>
 
-          {/* Responsive Menu Icon */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          {/* Mobile View: Flexbox wrapper to separate logo and menu */}
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              width: "100%",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            {/* Mobile Logo (Left) */}
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Typography variant="h6" noWrap>
+                <img src="images/AM.png" className="h-10 object-contain m-2" alt="Logo" />
+              </Typography>
+            </Link>
+
+            {/* Mobile Menu Icon (Right) */}
             <IconButton
               size="large"
               aria-label="open navigation menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              sx={{ color: '#fc0fc0' }}
             >
-            <MenuIcon />
+              <MenuIcon />
             </IconButton>
+
+            {/* Mobile Dropdown Menu */}
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
+              anchorOrigin={{ vertical: "bottom", horizontal: "right" }} 
               keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
+              transformOrigin={{ vertical: "top", horizontal: "right" }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                '& .MuiPaper-root': {
-                backgroundColor: 'black'},
-                display: { xs: 'block', md: 'none' },
+                "& .MuiPaper-root": { backgroundColor: "black" },
+                display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) =>
-                page.name === 'Resume' ? (
-                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                    <Button
-                      href={page.path}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{
-                        color: page.color,
-                        textAlign: 'center',
-                      }}
-                    >
-                      {page.name}
-                    </Button>
-                  </MenuItem>
-                ) : (
-                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                    <Button
-                      component={Link}
-                      to={page.path}
-                      sx={{
-                        color: page.color,
-                      }}
-                    >
-                      {page.name}
-                    </Button>
-                  </MenuItem>
-                )
-              )}
+              {pages.map((page) => (
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Button
+                    component={page.name === "Resume" ? "a" : Link}
+                    href={page.name === "Resume" ? page.path : undefined}
+                    to={page.name !== "Resume" ? page.path : undefined}
+                    target={page.name === "Resume" ? "_blank" : undefined}
+                    rel={page.name === "Resume" ? "noopener noreferrer" : undefined}
+                    sx={{
+                      color: page.color,
+                      fontFamily: "'Roboto Condensed', sans-serif",
+                      fontWeight: 300,
+                      fontSize: "1.2rem",
+                    }}
+                  >
+                    {page.name}
+                  </Button>
+                </MenuItem>
+              ))}
             </Menu>
           </Box>
 
-          {/* Logo for Mobile */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-            }}
-          >
-            <img src="images/neonwelcome.png" className="h-10 object-contain m-2" alt="Logo" />
-          </Typography>
-
-          {/* Desktop Links */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', gap:3 }}>
-            {pages.map((page) =>
-              page.name === 'Resume' ? (
+          {/* Desktop Navigation */}
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "flex-end", gap: 3 }}>
+            {pages.map((page) => (
                 <Button
-                  key={page.name}
-                  href={page.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    my: 2,
-                    color: page.color,
-                    display: 'block',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {page.name}
-                </Button>
-              ) : (
-                <Button
-                  key={page.name}
-                  component={Link}
-                  to={page.path}
-                  sx={{
-                    my: 2,
-                    color: page.color,
-                    display: 'block',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {page.name}
-                </Button>
-              )
-            )}
+                key={page.name}
+                component={page.name === 'Resume' ? 'a' : Link}
+                href={page.name === 'Resume' ? page.path : undefined}
+                to={page.name !== 'Resume' ? page.path : undefined}
+                target={page.name === 'Resume' ? '_blank' : undefined}
+                rel={page.name === 'Resume' ? 'noopener noreferrer' : undefined}
+                sx={{
+                  my: 2,
+                  color: page.color,
+                  display: 'block',
+                  fontFamily: "'Roboto Condensed', sans-serif",
+                  fontWeight: 300,
+                  fontSize: '1.2rem',
+                  position: 'relative', 
+                  '&:after': {
+                    content: "''",
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    margin: 'auto',
+                    width: '0%',
+                    height: '1px',
+                    background: page.color,
+                    transition: 'width 0.3s ease',
+                  },
+                  '&:hover:after': {
+                    width: '100%',
+                  },
+                }}
+              >
+                {page.name}
+              </Button>
+            ))}
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
+
 
 

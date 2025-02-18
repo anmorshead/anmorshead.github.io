@@ -189,7 +189,7 @@ export default function Projects() {
         <div className="bg-project-bg bg-fixed">
           <div className="flex justify-center items-center">
           <Masonry className="mt-10"
-              sx={{ marginTop: '4.5rem' }}
+              sx={{ marginTop: '6rem' }}
               columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} // Adjust number of columns based on screen size
               spacing={4} // Spacing between items
             >
