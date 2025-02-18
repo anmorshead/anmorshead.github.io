@@ -32,7 +32,7 @@ export default function NavBar() {
 
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}>
-      <Container maxWidth="xl">
+      <Container maxWidth="4xl">
         <Toolbar disableGutters sx={{ width: "100%", display: "flex", alignItems: "center" }}>
           {/* Desktop Logo */}
           <Link to="/" style={{ textDecoration: "none" }}>

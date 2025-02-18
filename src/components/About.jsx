@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function About() {
     return (
+        
         <Paper 
             className="mask-effect p-10 mb-20"
             square
