@@ -5,7 +5,7 @@ export default function About() {
     return (
         
         <Paper 
-            className="mask-effect p-10 mb-20"
+            className="mask-effect py-10 px-3 md:p-10 mb-20"
             square
             elevation={3}
             sx={{ backgroundColor: '#fc0fc0' }}
@@ -66,14 +66,15 @@ export default function About() {
                         className="h-full max-h-[600px] w-auto object-contain transition-transform duration-300 ease-in-out hover:rotate-3"
                     />
                 </div>
-
-                <div className="col-span-12 flex justify-between items-center m-10 space-x-4">
-                    <img src="images/cat.png" alt="Cat" className="w-20 h-20 lg:w-48 lg:h-48 object-contain hover:animate-dimlight" />
-                    <img src="images/cupcake.png" alt="Cupcake" className="w-20 h-20 lg:w-48 lg:h-48 object-contain hover:animate-dimlight" />
-                    <img src="images/car.png" alt="Car" className="w-20 h-20 lg:w-48 lg:h-48 object-contain hover:animate-dimlight" />
-                    <img src="images/pizza.png" alt="Pizza" className="w-20 h-20 lg:w-48 lg:h-48 object-contain hover:animate-dimlight" />
-                </div>
             </div>
+             {/* bottom icons */}
+            <div className="col-span-12 flex justify-between items-center my-10 md:mx-10 md:space-x-4">
+                <img src="images/cat.png" alt="Cat" className="w-20 h-20 sm:w-24 sm:h-24 lg:w-48 lg:h-48 object-contain hover:animate-dimlight flex-grow" />
+                <img src="images/cupcake.png" alt="Cupcake" className="w-20 h-20 sm:w-24 sm:h-24 lg:w-48 lg:h-48 object-contain hover:animate-dimlight flex-grow" />
+                <img src="images/car.png" alt="Car" className="w-20 h-20 sm:w-24 sm:h-24 lg:w-48 lg:h-48 object-contain hover:animate-dimlight flex-grow" />
+                <img src="images/pizza.png" alt="Pizza" className="w-20 h-20 sm:w-24 sm:h-24 lg:w-48 lg:h-48 object-contain hover:animate-dimlight flex-grow" />
+            </div>
+
         </Paper>
     );
 }

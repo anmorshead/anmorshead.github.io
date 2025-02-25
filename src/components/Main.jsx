@@ -55,11 +55,11 @@ export default function Main() {
         <div className="bg-dark-blue bg-fixed bg-custom-gradient -mt-16 relative overflow-hidden">
             <div
                 id="pink-dots"
-                className="absolute top-0 left-0 w-full h-full bg-pink-dots bg-repeat z-0 opacity-30">
+                className="absolute top-0 left-0 w-full h-full bg-pink-dots bg-repeat z-0 opacity-20">
             </div> 
             <div
                 id="blue-dots"
-                className="absolute top-0 left-0 w-full h-full bg-blue-dots bg-repeat z-10 opacity-30">
+                className="absolute top-0 left-0 w-full h-full bg-blue-dots bg-repeat z-10 opacity-20">
             </div> 
 
             <div className="relative z-10">
