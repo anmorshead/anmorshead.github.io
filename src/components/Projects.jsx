@@ -39,27 +39,18 @@ export default function Projects() {
       ],
     },
     {
-      title: "Screensaver",
+      title: "Favourite Cars App",
       description:
-        "An interactive screensaver shows shapes moving around a screen, colliding with other shapes and the edges of the screen, click to add an additional shape.",
-      link: "https://github.com/anmorshead/Screensaver",
-      image: "images/screensaver.png",
-      gif: "images/screensaver.gif",
+        "Users can create accounts and add/edit/delete cars from my list of favourite cars.",
+      link: "https://github.com/anmorshead/FavouriteCarsReactApp",
+      image: "images/favCars-gif.png",
+      gif: "images/favCars-gif.gif",
       chipNames: [
-        { name: "Java", icon: "images/java.png" },
-      ],
-    },
-    {
-      title: "Weather Week",
-      description:
-        "A simple JavaScript web app that displays a graph of your chosen weather type for a selected city over the period of a week. It uses data from the tomorrow.io API and Chart.js to display the data",
-      link: "https://github.com/anmorshead/Weather-API-Website",
-      image: "images/weather-week.png",
-      gif: "images/weather-week.gif",
-      chipNames: [
-        { name: "JavaScript", icon: "images/js.png" },
-        { name: "HTML", icon: "images/html.png" },
-        { name: "CSS", icon: "images/css.png" },
+        { name: "MongoDB", icon: "images/MongoDB.png" },
+        { name: "Express.js", icon: "images/Express.png" },
+        { name: "React", icon: "images/react.png" },
+        { name: "Node", icon: "images/Node.js.png" },
+        { name: "Tailwind", icon: "images/Tailwind.png" },
       ],
     },
     {
@@ -75,6 +66,19 @@ export default function Projects() {
         { name: "React", icon: "images/react.png" },
         { name: "Node", icon: "images/Node.js.png" },
         { name: "Tailwind", icon: "images/Tailwind.png" },
+      ],
+    },
+    {
+      title: "Weather Week",
+      description:
+        "A simple JavaScript web app that displays a graph of your chosen weather type for a selected city over the period of a week. It uses data from the tomorrow.io API and Chart.js to display the data",
+      link: "https://github.com/anmorshead/Weather-API-Website",
+      image: "images/weather-week.png",
+      gif: "images/weather-week.gif",
+      chipNames: [
+        { name: "JavaScript", icon: "images/js.png" },
+        { name: "HTML", icon: "images/html.png" },
+        { name: "CSS", icon: "images/css.png" },
       ],
     },
     {
@@ -116,21 +120,6 @@ export default function Projects() {
       ],
     },
     {
-      title: "Favourite Cars App",
-      description:
-        "Users can create accounts and add/edit/delete cars from my list of favourite cars.",
-      link: "https://github.com/anmorshead/FavouriteCarsReactApp",
-      image: "images/favCars-gif.png",
-      gif: "images/favCars-gif.gif",
-      chipNames: [
-        { name: "MongoDB", icon: "images/MongoDB.png" },
-        { name: "Express.js", icon: "images/Express.png" },
-        { name: "React", icon: "images/react.png" },
-        { name: "Node", icon: "images/Node.js.png" },
-        { name: "Tailwind", icon: "images/Tailwind.png" },
-      ],
-    },
-    {
       title: "Cities Database",
       description:
         "I created a website in basic PHP that allows for the viewing, searching, inserting, updating, and deleting of city records from the MySQL world sample database. Forms to allow for insertion and update have client-side validation of valid input. Only authenticated users will be able to access the system.",
@@ -141,6 +130,17 @@ export default function Projects() {
         { name: "PHP", icon: "images/php.png" },
         { name: "JavaScript", icon: "images/js.png" },
         { name: "MySQL", icon: "images/MySQL.png" },
+      ],
+    },
+    {
+      title: "Screensaver",
+      description:
+        "An interactive screensaver shows shapes moving around a screen, colliding with other shapes and the edges of the screen, click to add an additional shape.",
+      link: "https://github.com/anmorshead/Screensaver",
+      image: "images/screensaver.png",
+      gif: "images/screensaver.gif",
+      chipNames: [
+        { name: "Java", icon: "images/java.png" },
       ],
     },
     {

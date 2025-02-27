@@ -1,5 +1,4 @@
 import Skill from "./Skill";
-import { Paper } from '@mui/material';
 
 export default function Skills() {
     const skills = [
@@ -23,31 +22,22 @@ export default function Skills() {
         { name: "C#", color: "#8FF0FB", icon: "images/CSharp.png" },  
         { name: "Next.js", color: "#FDEE93", icon: "images/Next.js.png" },  
     ];
-    
 
     return (
-        <Paper
-            square
-            elevation={3} 
-            sx={{
-                backgroundColor: '#000000',
-                padding: 5, 
-                marginBottom:20
-            }}
-        >
-            <img
-                src="images/skills.png" 
-                alt="About Me"
-                style={{
-                    display: 'block', 
-                    width: '500px', 
-                }}
-            />
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-10">
-                 {skills.map((skill) => (
-                     <Skill key={skill.name} name={skill.name} color={skill.color} icon={skill.icon}/>
-                 ))}
+        <div className="mask-effect bg-[#0d0763] p-10 my-24 py-20">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+                <img 
+                    src="images/skills.png" 
+                    alt="Skills" 
+                    className="w-[500px] mb-6"
+                />
             </div>
-        </Paper>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:mb-20">
+                {skills.map((skill) => (
+                    <Skill key={skill.name} name={skill.name} color={skill.color} icon={skill.icon} />
+                ))}
+            </div>
+        </div>
     );
 }
+
