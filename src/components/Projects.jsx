@@ -15,6 +15,36 @@ export default function Projects() {
   // Project data
   const projectData = [
     {
+      title: "Shorecast",
+      description:
+        "'Nova Scotia's Beach Reporting Website': a subscription-based web app for exploring and monitoring Nova Scotia beaches, featuring real-time data and interactive maps. Built with Next.js, Leaflet, and NextAuth for Google sign-in authentication.",
+      link: "https://github.com/anmorshead/Shorecast",
+      image: "images/shorecast.png",
+      gif: "images/shorecast.gif",
+      chipNames: [
+        { name: "Next.js", icon: "images/Next.js.png" },
+        { name: "Tailwind", icon: "images/Tailwind.png" },
+        { name: "TypeScript", icon: "images/TypeScript.png" },
+        { name: "PostgreSQL", icon: "images/PostgresSQL.png" },
+      ],
+    },
+    {
+      title: "TicketHub",
+      description:
+        "A Ticket purchasing website built with Azure microservices combining a Functions App, API, Static Web app, SQL Database, and Storage Queue",
+      link: "https://github.com/anmorshead/TicketAppUI",
+      image: "images/tickethub.png",
+      gif: "images/tickethub.gif",
+      chipNames: [
+        { name: "C#", icon: "images/CSharp.png" },
+        { name: "ASP.NET", icon: "images/Net.png" },
+        { name: "Bootstrap", icon: "images/Bootstrap.png" },
+        { name: "Azure", icon: "images/Azure.png" },
+        { name: "React", icon: "images/react.png" },
+        { name: "SQL", icon: "images/MySQL.png" },
+      ],
+    },
+    {
       title: "DND Style Game",
       description:
         "In this Shubie Park themed game, you might choose to be an Elven Deer, fighting a mighty Squirrel Gang or even the dreaded Park Compliance Wizard.",

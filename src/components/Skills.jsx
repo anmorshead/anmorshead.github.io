@@ -21,6 +21,8 @@ export default function Skills() {
         { name: "Figma", color: "#FC0FC0", icon: "images/figma.png" },
         { name: "C#", color: "#8FF0FB", icon: "images/CSharp.png" },  
         { name: "Next.js", color: "#FDEE93", icon: "images/Next.js.png" },  
+        { name: "Azure", color: "#8FF0FB", icon: "images/Azure.png" }, 
+        
     ];
 
     return (
